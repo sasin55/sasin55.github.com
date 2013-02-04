@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[이럴수가..]]></title>
   <link href="http://sasin55.github.com/atom.xml" rel="self"/>
   <link href="http://sasin55.github.com/"/>
-  <updated>2013-02-04T13:45:11+09:00</updated>
+  <updated>2013-02-04T15:35:25+09:00</updated>
   <id>http://sasin55.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[sanghun_o]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[윈도우 로그인 이미지 변경]]></title>
+    <link href="http://sasin55.github.com/blog/2013/02/04/test1/"/>
+    <updated>2013-02-04T15:27:00+09:00</updated>
+    <id>http://sasin55.github.com/blog/2013/02/04/test1</id>
+    <content type="html"><![CDATA[<h1><em>2012 윈도우7 로그온 이미지 자동 변경 프로그램</em></h1>
+
+<ol>
+<li>Perl 모듈 설치 ( ex> c:/perl/bin/ppm.bat install File::Copy )</li>
+<li>Win32::TieRegistry</li>
+<li>File::Copy</li>
+<li>Win32::EventLog</li>
+<li><p>List::Util qw(shuffle)</p></li>
+<li><p>레지스트리 변경</p>
+
+<blockquote><p>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\Background의
+OEMBackground값을 1로 변경 // 없을 경우 DWORD 32Bit 타입으로 생성 후 1로 변경</p></blockquote></li>
+<li><p>로그온 이미지 변경</p></li>
+<li><p>C:/Windows/system32/oobe/info/backgrounds/ 경로에 backgroundDefault.jpg 파일명으로 이미지를 등록하면 로그온 이미지가 변경 됩니다.</p>
+
+<blockquote><p>조건으로는 복사된 파일은 반드시 jpg 파일이어야 합니다.
+파일의 크기는 256KB를 넘기면 안됩니다. 이 제한을 넘기면 적용되지 않습니다.
+이미지가 화면 크기에 따라 자동으로(stretched-to-fit) 맞춰집니다.</p></blockquote></li>
+<li><p>코드 이해</p></li>
+<li>첫번째 코드는 위에서 설정한 OEMBackground값의 설정/비설정 또는 존재하지 않아 새로 설정하는지 확인하는 코드 입니다.</li>
+<li>두번째 코드는 Image 폴더의 1, 2, 3, &#8230; 9.jpg파일의 경로를 배열에 넣고 로그온 이미지 변경 경로 조건에 맞춰 복사해주는 코드 입니다.</li>
+<li>세번째 코드는 로그인 성공로그의 이벤트 번호를 확인하고 해당 로그가 발생했을때 이벤트ID를 출력해주는 코드 입니다.
+
+<blockquote><p><a href="https://metacpan.org/module/Win32::EventLog" title="Win32::EventLog 모듈 설명">모듈에 대한 설명 좀 참고해야 될것 같습니다.</a></p></blockquote></li>
+<li>네번째 코드 위 내용의 종합 코드 입니다.</li>
+</ol>
+
+]]></content>
+  </entry>
   
 </feed>
